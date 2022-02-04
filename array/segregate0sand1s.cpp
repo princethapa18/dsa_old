@@ -85,9 +85,9 @@ public:
         while(i != j)
         {
             if(arr[i] == 0)
-                i++;
+                i++;   
             if(arr[j] == 1)
-                j--;
+                j--;  
             if( arr[i] == 1 && arr[j] == 0 )
             {
                 swap(arr[i], arr[j]);
@@ -102,15 +102,20 @@ public:
             return;
         
         int i = 0, j = n - 1;
+        // i moves from left to right  ---->
+        // <----- j moves from right to left      
+        // loop stops when i becomes >= j
         while(i < j)
         {
+            // if arr[i] == 1 and arr[j] == 0  then swap 
+            // move i and j
             if( arr[i] == 1 && arr[j] == 0 )
             {
-                arr[i++] = 0; // arr[i] = 0 then i++
+                arr[i++] = 0; // arr[i] = 0 then i++   
                 arr[j--] = 1; // arr[j] = 1 then j--
             }
-            if(arr[i] == 0) i++;
-            if(arr[j] == 1) j--;
+            if(arr[i] == 0) i++; // i only moves if arr[i] is equal to 0
+            if(arr[j] == 1) j--; // j only moves if arr[j] is equal to 1
         }
         
     }
